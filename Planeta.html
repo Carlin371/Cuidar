@@ -10,7 +10,6 @@
       background: linear-gradient(to bottom right, #c8e6c9, #fffde7);
       color: #2e7d32;
     }
-
     header {
       background: linear-gradient(135deg, #43a047, #66bb6a);
       padding: 40px 20px;
@@ -19,13 +18,11 @@
       border-bottom: 8px solid #388e3c;
       box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     }
-
     header h1 {
       font-size: 3rem;
       margin: 0;
       animation: brillar 2s infinite alternate;
     }
-
     header p {
       font-size: 1.3rem;
     }
@@ -231,44 +228,103 @@
     input[type="submit"]:hover {
       background: linear-gradient(135deg, #81c784, #4caf50);
     }
-  </style>
+
+    h1 {
+      text-align: center;
+      color: #2e7d32;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .box {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .box h2 {
+      color: #388e3c;
+    }
+	 body {
+      font-family: Arial, sans-serif;
+      background-color: #f1fef4;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+    }
+
+    .contenedor {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .cuadro {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      flex: 1;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .cuadro img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+
+    .cuadro h2 {
+      color: #388e3c;
+      margin-bottom: 10px;
+    }
+</style>
 </head>
 <body>
-
 <header>
-  <h1>🌎 Protejamos el Medio Ambiente del Barrio Venecia</h1>
-  <p>Con juegos, aprendizaje y acción comunitaria</p>
+ <img src="https://www.utmachala.edu.ec/portalwp/wp-content/uploads/2015/08/LOGO_OUT.png" width="150" height="150">
+  <h1 style= "font-size: 30pt"> Hagamos De Venecia Un Barrio Más Limpio </h1>
 </header>
 
 <section>
   <h2>📌 Introducción</h2>
-  <p>
-    El barrio Venecia enfrenta desafíos ambientales como la acumulación de basura, tala de árboles y contaminación. Esta página busca concienciar a niños y vecinos sobre la importancia de cuidar el entorno natural y promover acciones sostenibles desde casa, la escuela y la comunidad.
-  </p>
+  <p> El barrio Venecia enfrenta desafíos ambientales como la acumulación de basura, la tala de árboles y la contaminación; por eso, esta página busca concienciar a niños y vecinos sobre la importancia de cuidar el entorno natural y promover acciones sostenibles desde casa, la escuela y la comunidad.
+</p>
 </section>
 
 <section>
-  <h2>🎮 Actividad interactiva: ¿Cuánto sabes?</h2>
-  <div class="pregunta">
-    <p>🕵️‍♂️ ¿Qué color se usa para los contenedores de reciclaje de papel?</p>
-    <button onclick="verificarRespuesta('azul')">Azul</button>
-    <button onclick="verificarRespuesta('rojo')">Rojo</button>
-    <button onclick="verificarRespuesta('verde')">Verde</button>
-  </div>
-  <p id="resultadoQuiz"></p>
+  <h2>🎮 Video educativo</h2>
+  <center> <p>Mira este video divertido para aprender cómo cuidar nuestro planeta:</p> </center>
+  <iframe src="https://www.powtoon.com/embed/cFTSVGSjXy4/" allowfullscreen></iframe>
 </section>
 
 <!-- NUEVAS ACTIVIDADES -->
 
 <section>
-  <h2>❓ Mini Quiz Ambiental</h2>
+  <h2> 🧩 Mini Quiz Ambiental 🌲</h2>
   <div id="miniQuiz">
     <div class="miniPregunta">
-      <p>¿Cuál es la mejor forma de reducir la contaminación del aire?</p>
+      <center> <p>¿Cuál es la mejor forma de reducir la contaminación del aire?</p> 
       <button onclick="miniQuizResponder(0, 'a')">A) Usar más autos</button>
       <button onclick="miniQuizResponder(0, 'b')">B) Plantar árboles</button>
       <button onclick="miniQuizResponder(0, 'c')">C) Quemar basura</button>
     </div>
+	</center>
     <div class="miniPregunta" style="display:none;">
       <p>¿Qué objeto no se puede reciclar?</p>
       <button onclick="miniQuizResponder(1, 'a')">A) Botellas de plástico</button>
@@ -286,13 +342,14 @@
 </section>
 
 <section>
-  <h2>♻️ Actividad: Arrastra y suelta el residuo en el contenedor correcto</h2>
-  <p>Arrastra cada residuo y suéltalo en el contenedor correcto según su tipo:</p>
+  <h2>♻ Actividad: </h2>
+  <h2> Arrastra y suelta el residuo en el contenedor correcto</h2>
   <div class="contenedor-reciclaje" id="contenedores">
     <div id="contenedorVidrio" ondragover="permitirSoltar(event)" ondrop="soltar(event)">Vidrio</div>
     <div id="contenedorPapel" ondragover="permitirSoltar(event)" ondrop="soltar(event)">Papel</div>
     <div id="contenedorOrganico" ondragover="permitirSoltar(event)" ondrop="soltar(event)">Orgánico</div>
   </div>
+
   <div>
     <div draggable="true" ondragstart="arrastrar(event)" id="botella" class="item-arrastrable">Botella de vidrio</div>
     <div draggable="true" ondragstart="arrastrar(event)" id="periodico" class="item-arrastrable">Periódico</div>
@@ -302,59 +359,89 @@
 </section>
 
 <section>
-  <h2>📝 Comparte tu idea para cuidar nuestro barrio</h2>
-  <form id="formIdeas" onsubmit="enviarIdea(event)">
-    <textarea id="inputIdea" placeholder="Escribe aquí tu idea para ayudar al medio ambiente en el barrio Venecia..." required></textarea>
-    <br />
-    <input type="submit" value="Enviar Idea" />
-  </form>
-  <p id="resultadoIdeas"></p>
-</section>
-
-<section>
   <h2>🎮 Juego educativo</h2>
-  <p>Haz clic en el botón para jugar y aprender sobre el medio ambiente:</p>
+  <center> <p>Haz clic en el botón para jugar y aprender sobre el medio ambiente:</p> </center>
   <a class="boton-juego" href="https://wordwall.net/resource/7472406" target="_blank">🌱 ¡Jugar Ahora!</a>
 </section>
 
 <section>
-  <h2>🎮 Video educativo</h2>
-  <p>Mira este video divertido para aprender cómo cuidar nuestro planeta:</p>
-  <iframe src="https://www.powtoon.com/embed/cFTSVGSjXy4/" allowfullscreen></iframe>
+  <h2>¿Por qué es importante cuidar el medio ambiente?</h2>
+    <div class="grid-container">
+    <!-- Caja 1 -->
+    <div class="box">
+	<ul>
+    <li>
+    <h2>1. Salud para todos</h2>
+    <p style="text-align: justify">Significa menos contaminacion donde obtendremos agua y aire totalmente limpios.</p>
+	</li>
+    </div>
+
+    <!-- Caja 2 -->
+    <div class="box">
+	<ul>
+    <li>
+    <h2>2. Cuidamos la vida</h2>
+      <p style="text-align: justify">Proteger el entorno ayuda a conservar las plantas, animales y los ecosistemas.</p>
+    </li>
+	</div>
+
+    <!-- Caja 3 -->
+    <div class="box">
+	<ul>
+    <li>
+    <h2>3. Recursos naturales</h2>
+    <p style="text-align: justify">El agua, los árboles y la energía no duran para siempre, usémoslos con responsabilidad.</p>
+    </li>
+	</div>
+
+    <!-- Caja 4 -->
+    <div class="box">
+	<ul>
+    <li>
+      <h2>4. Pensar en el futuro</h2>
+      <p style="text-align: justify" >Si cuidamos nuestro barrio hoy, dejamos un mejor lugar a las futuras generaciones.</p>
+    </li>
+	</div>
+	</div>
 </section>
 
 <section>
-  <h2>💡 Frases motivadoras</h2>
-  <ul>
-    <li>🌳 "Planta un árbol y regala vida al futuro."</li>
-    <li>💧 "Cuida el agua, el recurso más valioso que tenemos."</li>
-    <li>🌎 "Cada pequeño gesto cuenta para cuidar el planeta."</li>
-    <li>🐞 "La naturaleza nos habla, aprendamos a escucharla."</li>
-  </ul>
+  <h2> ¿Deseas compartir tu opinión o sugerencia? </h2>
+  <center> <p>Haz clic aquí para acceder al formulario y dejarnos tu comentario</p> </center>
+  <center> <a href="https://forms.gle/7wdGdApv5EjpSRFW6"> https://forms.gle/7wdGdApv5EjpSRFW6 </a> </center>
 </section>
 
 <section>
-  <h2>🖍️ Actividad creativa</h2>
-  <p>Pinta o dibuja cómo imaginas un barrio Venecia más limpio y verde. Luego compártelo con tu familia o clase.</p>
-  <ul>
-    <li>🎨 Usa colores alegres y muchas plantas</li>
-    <li>🫼 Dibuja basureros y personas reciclando</li>
-    <li>🚲 Añade bicicletas y árboles felices</li>
-  </ul>
-</section>
+  <h2>Docentes Participantes</h2>
 
-<section>
-  <h2>👨‍👧‍👦 Ideas para hacer en casa</h2>
-  <ul>
-    <li>♻️ Clasifica los residuos con tu familia</li>
-    <li>💡 Apaga las luces que no uses</li>
-    <li>🚿 Cierra el grifo al cepillarte los dientes</li>
-    <li>🌼 Planta una flor o un árbol en casa</li>
-  </ul>
+ <div class="contenedor">
+    <div class="cuadro">
+      <img src="https://github.com/Carlosnick1996/ProyectoEducativo/blob/main/leyna.jpg?raw=true" width="200" height="200">
+      
+      <p style="font-weight: bold">YAURE LEYNA</p>
+	  <p style="font-weight: bold">(DOCENTE)</p>
+    </div>
+
+    <div class="cuadro">
+      <img src= "https://github.com/Carlosnick1996/ProyectoEducativo/blob/main/carlos%20armijos.png?raw=true" width="200" height="200" >
+      
+      <p style="font-weight: bold">ARMIJOS CARLOS</p>
+	  <p style="font-weight: bold">(COORDINADOR - DOCENTE)</p>
+    </div>
+
+    <div class="cuadro">
+      <img src="https://github.com/Carlosnick1996/ProyectoEducativo/blob/main/Marisela.jpg?raw=true" width="200" height="200">
+      
+      <p style="font-weight: bold">HURTADO JOHANNA</p>
+	  <p style="font-weight: bold">(DOCENTE)</p>
+    </div>
+  </div> 
 </section>
 
 <footer>
-  💚 Gracias por ser parte del cambio. ¡Juntos salvamos el planeta desde nuestro barrio! 🌍
+  
+  <p>💚 Gracias por ser parte del cambio. ¡Juntos salvamos el planeta desde nuestro barrio! 🌍</p>
+  <p>@ 2025 Educación Ambiental </p>
 </footer>
 
 <div class="emoji-flotante">🍃</div>
@@ -386,7 +473,7 @@
 
     if (respuesta === preguntasMiniQuiz[preguntaIndex].respuestaCorrecta) {
       puntajeMiniQuiz++;
-      resultado.textContent = "✔️ ¡Correcto!";
+      resultado.textContent = "✔ ¡Correcto!";
     } else {
       resultado.textContent = "❌ Incorrecto, intenta la siguiente.";
     }
@@ -399,7 +486,7 @@
     if(preguntaActual < preguntas.length) {
       preguntas[preguntaActual].style.display = "block";
     } else {
-      resultado.textContent = `🎉 Fin del mini quiz. Tu puntaje: ${puntajeMiniQuiz} de ${preguntas.length}.`;
+      resultado.textContent = 🎉 Fin del mini quiz. Tu puntaje: ${puntajeMiniQuiz} de ${preguntas.length}.;
       // Reiniciar para jugar otra vez si quieren
       preguntaActual = 0;
       puntajeMiniQuiz = 0;
@@ -437,21 +524,6 @@
       resultado.textContent = "❌ No es el contenedor correcto, inténtalo de nuevo.";
       resultado.style.color = "#d32f2f";
     }
-  }
-
-  // Enviar idea para cuidar el barrio
-  function enviarIdea(event) {
-    event.preventDefault();
-    const input = document.getElementById("inputIdea");
-    const resultado = document.getElementById("resultadoIdeas");
-    if (input.value.trim().length < 5) {
-      resultado.textContent = "Por favor, escribe una idea más detallada.";
-      resultado.style.color = "#d32f2f";
-      return;
-    }
-    resultado.textContent = "¡Gracias por compartir tu idea! 🌿";
-    resultado.style.color = "#2e7d32";
-    input.value = "";
   }
 </script>
 
